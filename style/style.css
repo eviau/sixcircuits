@@ -58,5 +58,11 @@ button{
     background-color: #2b7e7e;
     color:rgb(106, 202, 202);
     border: thick solid rgb(106, 202, 202);
+    cursor: move;
+}
+
+li{
+    border: thick solid rgb(0, 50, 50);
+    padding: 5px;
 }
 

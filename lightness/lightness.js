@@ -23,6 +23,7 @@ function saveobj() {
     console.log(objects[ieme]);
     console.log(ieme);
     displayobjects();
+    displaylist();
     ieme++;
 
 
@@ -45,12 +46,6 @@ function displayobjects() {
     objectstable.appendChild(divi);
 }
 
-dragElement(document.getElementById("mydivheader"))
-
-function dragElement(elem){
-
-}
-
 function suggestobj(){
     document.getElementById('nameobj').value = suggestions_obj[ieme_obj];
     ieme_obj += 1;
@@ -64,3 +59,17 @@ function suggestw(){
     ieme_w = ieme_w % suggestions_weight.length;
 
 }
+
+function displaylist(){
+    var objectstable = document.getElementById("mydivheader");
+
+
+    var divi = document.createElement("li");
+    divi.draggable= "true";
+
+    console.log(objects);
+    divi.innerHTML = ieme + ": " + objects[ieme].name + ", " + objects[ieme].weight;
+    objectstable.appendChild(divi);
+}
+
+var list = document.getElementById("mydivheader");
