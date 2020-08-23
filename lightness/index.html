@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Six circuits</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+
+</head>
+<body>
+
+    <a href="../index.html">Click here to go back to the introduction.</a>
+<h1>Lightness</h2>
+    <p>In this circuit, you be responsible for dressing a list of light objects, and their approximate weights.</p>
+    <p>Sometimes you will be given the object, and you will need to assign a weight to it.</p>
+    <p>Other times, we will expect you to create new objects based on a given weight.</p>
+<p>At the end, we will ask you to review the list and to order it.</p>
+
+<div id="game-border">
+    <div id="game">
+
+    <h2>My object is extremely light, it is...</h2>
+<p>A feather, the weight of worries on a summer evening, the speed of light?</p>
+<p><label for="obj">This object is:</label></p>
+
+<p><textarea id="nameobj" name="nameobj" rows=5 cols=50></textarea></p>
+
+<p><label for="wobj">And the weight is more or less:</label></p>
+
+<p><textarea id="wobj"rows=1></textarea></p>
+<p>
+<button id="saveobj" onclick=saveobj()>save the object</button>
+<button id="nextobj" onclick=nextobj()>enter another object</button>
+
+</p>
+
+<h2>The current list of objects and their weight is...</h2>
+<div id ="objtable">
+</div>
+</div>
+</div>
+<button id="quickness" onclick="location.href='quickness/index.html'">Go to the second circuit: Quickness</button>
+
+</body>
+<script src="lightness.js"></script>
+
+</html>
