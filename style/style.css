@@ -40,5 +40,23 @@ button{
     background-color:rgb(0, 75, 75);
     padding: 5% 5% 5% 5%;
     margin: 5% 5% 5% 5%;
+    border: 5% 5% 5% 5%;
+}
+
+#objtable{
+    background-color: #2b7e7e;
+    color:rgb(106, 202, 202);
+    border: thick solid rgb(106, 202, 202);
+}
+
+
+#mydiv{
+    position: absolute;
+}
+
+#mydivheader{
+    background-color: #2b7e7e;
+    color:rgb(106, 202, 202);
+    border: thick solid rgb(106, 202, 202);
 }
 
