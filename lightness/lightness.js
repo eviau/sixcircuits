@@ -1,3 +1,7 @@
+// draggable functions from https://codepen.io/crouchingtigerhiddenadam/details/qKXgap
+
+let selected = null;
+
 var objects = {}
 
 var suggestions_obj = ["an apple seed","the tear of joy of a fairy","the space between thoughts"];
@@ -13,6 +17,16 @@ var ieme_w = 0;
 document.getElementById('nameobj').value = '';
 document.getElementById('wobj').value = '';
 
+
+function isBefore(el1, el2) {
+    let cur
+    if (el2.parentNode === el1.parentNode) {
+      for (cur = el1.previousSibling; cur; cur = cur.previousSibling) {
+        if (cur === el2) return true
+      }
+    }
+    return false;
+  }
 
 function saveobj() {
     current_obj = document.getElementById("nameobj").value;
@@ -42,7 +56,8 @@ function displayobjects() {
 
     var divi = document.createElement("div");
     console.log(objects);
-    divi.innerHTML = ieme + ": " + objects[ieme].name + ", " + objects[ieme].weight;
+    divi.style.padding = "5px";
+    divi.innerHTML = ieme + ": " + objects[ieme].name + "; " + objects[ieme].weight;
     objectstable.appendChild(divi);
 }
 
@@ -66,10 +81,31 @@ function displaylist(){
 
     var divi = document.createElement("li");
     divi.draggable= "true";
+    divi.addEventListener("dragend", ondragend);
+    divi.addEventListener("dragover",ondragover);
+    divi.addEventListener("dragstart",ondragstart);
 
     console.log(objects);
-    divi.innerHTML = ieme + ": " + objects[ieme].name + ", " + objects[ieme].weight;
+    divi.innerHTML = ieme + ": " + objects[ieme].name + "; " + objects[ieme].weight;
     objectstable.appendChild(divi);
 }
 
 var list = document.getElementById("mydivheader");
+
+function ondragover(event){
+    if (isBefore(selected, event.target)){
+        event.target.parentNode.insertBefore(selected,event.target);
+    } else{
+        event.target.parentNode.insertBefore(selected,event.target.nextSibling)
+    }
+}
+
+function ondragend(event){
+    selected= null;
+}
+
+function ondragstart(event){
+    event.dataTransfer.effectallowed = 'move';
+    event.dataTransfer.setData('text/plain', null);
+    selected = event.target;
+}

@@ -47,7 +47,9 @@ button{
     background-color: #2b7e7e;
     color:rgb(106, 202, 202);
     border: thick solid rgb(106, 202, 202);
+    padding: 15px;
 }
+
 
 
 #mydiv{
