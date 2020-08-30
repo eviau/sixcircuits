@@ -32,6 +32,11 @@ button{
     border-color: white;
 }
 
+button:disabled{
+    background-color: rgb(165, 165, 165);
+    color: #2b7e7e;
+}
+
 #game-border{
     background-color:#2b7e7e;
 }
